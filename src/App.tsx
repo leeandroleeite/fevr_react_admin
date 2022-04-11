@@ -1,13 +1,21 @@
 import './App.css';
-import React from 'react';
+
+import React, { useEffect } from 'react';
 
 function App() {
 
+  useEffect(() => {
+    fetch('/api/players')
+      .then(response => {
+        return response.json();
+      })
+      .then(data => console.log(data));
+    }, []);
+  
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <div></div>
   );
+  
 }
 
 export default App;
