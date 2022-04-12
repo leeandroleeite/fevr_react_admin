@@ -1,21 +1,13 @@
 import './App.css';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import SortingTable from './components/SortingTable';
 
 function App() {
 
-  useEffect(() => {
-    fetch('/api/players')
-      .then(response => {
-        return response.json();
-      })
-      .then(data => console.log(data));
-    }, []);
-  
+
   return (
-    <div></div>
-  );
-  
+  <SortingTable />  );
 }
 
 export default App;
