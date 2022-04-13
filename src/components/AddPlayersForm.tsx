@@ -1,6 +1,6 @@
-import { Button, TextField } from '@mui/material'
-import { Form, Formik } from 'formik'
-import React from 'react'
+import { Button, TextField } from '@mui/material';
+import { Form, Formik } from 'formik';
+import React from 'react';
 
 
 const initialValues = {
@@ -11,7 +11,7 @@ const initialValues = {
     position: "MC",
 }
 
-function onSubmit(values: { name: string; number: number; nationality: string; age: number; position: string }) {
+const  handleSubmitForm = (values: { name: string; number: number; nationality: string; age: number; position: string }) => {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -27,9 +27,10 @@ export const AddPlayersForm: React.FC = () => {
     return (
       
         <>
-          <h3>Add New Player</h3>
-           <Formik initialValues={initialValues} onSubmit={values => {
-            onSubmit(values);
+            <h1>Add New Player</h1>
+
+            <Formik initialValues={initialValues} onSubmit={values => {
+                handleSubmitForm(values);
         }}
         >
             {({values, handleChange}) => (

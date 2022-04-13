@@ -7,8 +7,11 @@ import SortingTable from './components/SortingTable';
 function App() {
   return (
   <>
-    <AddPlayersForm />
+  <div style={{margin: '5%'}}>
+  <AddPlayersForm />
+    <br />
     <SortingTable /> 
+  </div>
   </>
  );
 }
