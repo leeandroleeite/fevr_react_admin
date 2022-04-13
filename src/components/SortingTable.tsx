@@ -17,6 +17,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import NotificationAddIcon from '@mui/icons-material/NotificationAdd';
 import DeleteIcon from '@mui/icons-material/Delete';
+import NotificationsList from './NotificationsList';
 
 
 
@@ -274,7 +275,7 @@ const handleDeleteRecord = (id: string | number) => {
                        <Collapse in={open} timeout="auto" unmountOnExit>
                          <Box sx={{ margin: 1 }}>
 
-                           "Hello World"
+                           <NotificationsList id={player.id} />
 
                          </Box>
                        </Collapse>
