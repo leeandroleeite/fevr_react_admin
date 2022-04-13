@@ -16,6 +16,8 @@ import { visuallyHidden } from '@mui/utils';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import NotificationAddIcon from '@mui/icons-material/NotificationAdd';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 interface Data {
@@ -160,18 +162,18 @@ export default function EnhancedTable() {
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+  const [open, setOpen] = React.useState(false);
   const [players, setPlayers] = useState<any[]>([])
 
-  const [open, setOpen] = React.useState(false);
-
   useEffect(() => {
-    fetch('/api/players')
-      .then(response => {
-        return response.json();
-      })
-      .then(data => setPlayers(data));
+    fetchPlayers()
     }, []);
+
+  const fetchPlayers = async () => {
+    const response = await  fetch('/api/players');
+    const data = await response.json();
+    setPlayers(data)
+  }
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
@@ -234,18 +236,12 @@ const handleDeleteRecord = (id: string | number) => {
               {stableSort(players, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((player, index) => {
-                  // const isItemSelected = isSelected(player.name);
-                  const labelId = `enhanced-table-checkbox-${index}`;
-
                   return (
                     <>
                     <TableRow
                       hover
-                      // onClick={(event) => handleClick(event, player.name)}
-                      //aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={player.id}
-                      //selected={isItemSelected}
+                      key={index}
                     >
                     <TableCell>
                       <IconButton
@@ -257,20 +253,19 @@ const handleDeleteRecord = (id: string | number) => {
                         {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                       </IconButton>
                     </TableCell>
-                      <TableCell
-                        component="th"
-                        id={labelId}
-                        scope="row"
-                        padding="none"
-                      >
-                        {player.name}
-                      </TableCell>
+                      <TableCell padding="none">{player.name}</TableCell>
                       <TableCell align="right">{player.number}</TableCell>
                       <TableCell align="right">{player.nationality}</TableCell>
                       <TableCell align="right">{player.age}</TableCell>
                       <TableCell align="right">{player.position}</TableCell>
                       <TableCell align="right">
-                      <Button onClick={(id) => handleDeleteRecord(player.id)}>Delete</Button>
+                      <Button  
+                      variant = "contained"
+                      onClick={(id) => handleDeleteRecord(player.id)} 
+                      startIcon={<DeleteIcon />}
+                      >
+                        Delete
+                      </Button>
                       </TableCell>
 
                     </TableRow>

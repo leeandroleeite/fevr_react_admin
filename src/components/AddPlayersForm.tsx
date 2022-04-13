@@ -1,11 +1,13 @@
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
 import React from 'react';
 
 
+
 const initialValues = {
     name: "Bruno Fernandes",
-    number: 10,
+    number: 18,
     nationality: "PT",
     age:25,
     position: "MC",
@@ -35,12 +37,12 @@ export const AddPlayersForm: React.FC = () => {
         >
             {({values, handleChange}) => (
             <Form>
-                <TextField name='name' value={values.name} onChange={handleChange} />
-                <TextField name='number' value={values.number} onChange={handleChange} />
-                <TextField name='nationality' value={values.nationality} onChange={handleChange} />
-                <TextField name='age' value={values.age} onChange={handleChange} />
-                <TextField name='position' value={values.position} onChange={handleChange} />
-                <Button type='submit'>Submit</Button>
+                <TextField style={{margin: '5px'}} label='Name' name='name' value={values.name} onChange={handleChange} />
+                <TextField style={{margin: '5px'}} label='Number' name='number' value={values.number} onChange={handleChange} />
+                <TextField style={{margin: '5px'}} label='Nationality' name='nationality' value={values.nationality} onChange={handleChange} />
+                <TextField style={{margin: '5px'}} label='Age' name='age' value={values.age} onChange={handleChange} />
+                <TextField style={{margin: '5px'}} label='Position' name='position' value={values.position} onChange={handleChange} />
+                <Button style={{margin: '15px'}} variant = "contained" type='submit'>Submit</Button>
             </Form>
         )}
         </Formik>
