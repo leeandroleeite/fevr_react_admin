@@ -1,13 +1,15 @@
+import React from 'react';
 import './App.css';
-
-import React, { useEffect, useState } from 'react';
+import { AddPlayersForm } from './components/AddPlayersForm';
 import SortingTable from './components/SortingTable';
 
+
 function App() {
-
-
   return (
-  <SortingTable />  );
+  <>
+    <AddPlayersForm />
+    <SortingTable /> 
+  </>
+ );
 }
-
 export default App;
