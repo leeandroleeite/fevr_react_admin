@@ -6,14 +6,14 @@ import React from 'react';
 
 
 const initialValues = {
-    name: "Bruno Fernandes",
-    number: 18,
-    nationality: "PT",
-    age:25,
-    position: "MC",
+    name: "",
+    number: "",
+    nationality: "",
+    age:0,
+    position: "",
 }
 
-const  handleSubmitForm = (values: { name: string; number: number; nationality: string; age: number; position: string }) => {
+const  handleSubmitForm = (values: { name: string; number: string; nationality: string; age: number; position: string }) => {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
