@@ -39,7 +39,7 @@ export const AddPlayersForm: React.FC = () => {
                 <TextField style={{margin: '5px'}} label='Number' name='number' value={values.number} onChange={handleChange} />
                 <TextField style={{margin: '5px'}} label='Nationality' name='nationality' value={values.nationality} onChange={handleChange} />
                 <TextField style={{margin: '5px'}} label='Age' name='age' value={values.age} onChange={handleChange} />
-                <TextField style={{margin: '5px'}} label='Birth Date' name='birthdate' value={values.birthdate} onChange={handleChange} />
+                <TextField style={{margin: '5px'}} label='YYY-MM-DD' name='birthdate' value={values.birthdate} onChange={handleChange} />
                 <TextField style={{margin: '5px'}} label='Position' name='position' value={values.position} onChange={handleChange} />
                 <Button style={{margin: '15px'}} variant = "contained" type='submit'>Submit</Button>
             </Form>
