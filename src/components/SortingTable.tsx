@@ -1,10 +1,6 @@
 import DeleteIcon from '@mui/icons-material/Delete';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import NotificationAddIcon from '@mui/icons-material/NotificationAdd';
 import { Button, Collapse } from '@mui/material';
 import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -19,7 +15,6 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import NotificationsList from './NotificationsList';
 import OpenSimpleDialog from './SimpleDialog';
-import SimpleDialog from './SimpleDialog';
 
 
 
@@ -250,8 +245,6 @@ const handleDeleteRecord = (id: string | number) => {
                   return (
                     <>
                     <TableRow
-                      hover
-                      tabIndex={-1}
                       key={index}
                     >
                     <TableCell>
@@ -268,7 +261,7 @@ const handleDeleteRecord = (id: string | number) => {
                       <TableCell align="right">
                       <Button  
                       variant = "contained"
-                      onClick={(id) => handleDeleteRecord(player.id)} 
+                      onClick={() => handleDeleteRecord(player.id)} 
                       startIcon={<DeleteIcon />}
                       >
                         Delete
@@ -276,7 +269,7 @@ const handleDeleteRecord = (id: string | number) => {
                       </TableCell>
 
                     </TableRow>
-                     <TableRow>
+                     <TableRow key= {player.id}>
                      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                        <Collapse in={open} timeout="auto" unmountOnExit>
                          <Box sx={{ margin: 1 }}>

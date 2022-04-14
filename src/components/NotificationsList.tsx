@@ -51,13 +51,10 @@ const initialValues = {
   return (
     <Box sx={{ marginLeft:'5%', maxWidth: '150%', bgcolor: 'whitesmoke' }}>
         <List dense={true}>
-
-            {
-                notifications.map((notification) => {
-
+          {
+                notifications.map((notification, index) => {
                     return(
-
-                        <ListItem disablePadding>
+                        <ListItem key={index} disablePadding>
                         <ListItemText primary="Notification:" />
                         <p>{notification['message']}</p>
                         <Button  
@@ -65,13 +62,9 @@ const initialValues = {
                         startIcon={<DeleteIcon />}
                         >
                         </Button>
-          </ListItem>
+                        </ListItem>
                     )
-
-                
                 })
-
-
             }
         </List>
       <Divider />
@@ -88,7 +81,6 @@ const initialValues = {
             </Form>
         )}
         </Formik>
-        
           </ListItem>
         </List>
     </Box>

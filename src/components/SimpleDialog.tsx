@@ -4,8 +4,6 @@ import Dialog from '@mui/material/Dialog';
 import * as React from 'react';
 import NotificationsList from './NotificationsList';
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
-
 export interface SimpleDialogProps {
     id: number;
   open: boolean;
@@ -37,7 +35,6 @@ export interface SimpleDialogProps {
 
 export default function OpenSimpleDialog(props: any) {
   const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -45,7 +42,6 @@ export default function OpenSimpleDialog(props: any) {
 
   const handleClose = (value: string) => {
     setOpen(false);
-    setSelectedValue(value);
   };
 
   return (
@@ -59,7 +55,7 @@ export default function OpenSimpleDialog(props: any) {
                       </IconButton>
       <SimpleDialog
         id={props.id}
-        selectedValue={selectedValue}
+        selectedValue={""}
         open={open}
         onClose={handleClose}
       />
