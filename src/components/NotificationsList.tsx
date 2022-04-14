@@ -27,7 +27,6 @@ const initialValues = {
     const fetchNotifications = async (id: string | number) => {
         const response = await  fetch('/api/players/' + id + '/notifications');
         const data = await response.json();
-        console.log(data)
         setNotifications(data)
       }
 

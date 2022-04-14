@@ -1,9 +1,6 @@
-import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
 import React from 'react';
-
-
 
 const initialValues = {
     name: "Bruno Fernandes",
@@ -49,6 +46,5 @@ export const AddPlayersForm: React.FC = () => {
         )}
         </Formik>
         </>
-     
     );
 };
