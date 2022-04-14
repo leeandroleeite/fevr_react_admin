@@ -1,5 +1,7 @@
+import DeleteIcon from '@mui/icons-material/Delete';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import NotificationAddIcon from '@mui/icons-material/NotificationAdd';
 import { Button, Collapse } from '@mui/material';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -15,9 +17,10 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import { visuallyHidden } from '@mui/utils';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import NotificationAddIcon from '@mui/icons-material/NotificationAdd';
-import DeleteIcon from '@mui/icons-material/Delete';
 import NotificationsList from './NotificationsList';
+import OpenSimpleDialog from './SimpleDialog';
+import SimpleDialog from './SimpleDialog';
+
 
 
 
@@ -252,14 +255,9 @@ const handleDeleteRecord = (id: string | number) => {
                       key={index}
                     >
                     <TableCell>
-                      <IconButton
-                        aria-label="expand row"
-                        size="small"
-                        onClick={() => setOpen(!open)}
-                      >
-                        <NotificationAddIcon />
-                        {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                      </IconButton>
+                      
+                      <OpenSimpleDialog id={player.id} />
+                      
                     </TableCell>
                       <TableCell padding="none">{player.name}</TableCell>
                       <TableCell align="right">{player.number}</TableCell>
