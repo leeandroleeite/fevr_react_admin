@@ -6,14 +6,15 @@ import React from 'react';
 
 
 const initialValues = {
-    name: "",
-    number: "",
-    nationality: "",
-    age:0,
-    position: "",
+    name: "Bruno Fernandes",
+    number: "18",
+    nationality: "Portugal",
+    age: 27,
+    position: "M",
+    birthdate: "1994-09-08",
 }
 
-const  handleSubmitForm = (values: { name: string; number: string; nationality: string; age: number; position: string }) => {
+const  handleSubmitForm = (values: { name: string; number: string; nationality: string; age: number; position: string; birthdate: string }) => {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -41,6 +42,7 @@ export const AddPlayersForm: React.FC = () => {
                 <TextField style={{margin: '5px'}} label='Number' name='number' value={values.number} onChange={handleChange} />
                 <TextField style={{margin: '5px'}} label='Nationality' name='nationality' value={values.nationality} onChange={handleChange} />
                 <TextField style={{margin: '5px'}} label='Age' name='age' value={values.age} onChange={handleChange} />
+                <TextField style={{margin: '5px'}} label='Birth Date' name='birthdate' value={values.birthdate} onChange={handleChange} />
                 <TextField style={{margin: '5px'}} label='Position' name='position' value={values.position} onChange={handleChange} />
                 <Button style={{margin: '15px'}} variant = "contained" type='submit'>Submit</Button>
             </Form>

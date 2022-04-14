@@ -28,6 +28,7 @@ interface Data {
   nationality: string;
   age: number;
   position: string;
+  birthdate: string;
 }
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -99,6 +100,12 @@ const headCells: readonly HeadCell[] = [
     numeric: true,
     disablePadding: false,
     label: 'Age',
+  },
+  {
+    id: 'birthdate',
+    numeric: true,
+    disablePadding: false,
+    label: 'Birth Date',
   },
   {
     id: 'position',
@@ -258,6 +265,7 @@ const handleDeleteRecord = (id: string | number) => {
                       <TableCell align="right">{player.number}</TableCell>
                       <TableCell align="right">{player.nationality}</TableCell>
                       <TableCell align="right">{player.age}</TableCell>
+                      <TableCell align="right">{player.birthdate}</TableCell>
                       <TableCell align="right">{player.position}</TableCell>
                       <TableCell align="right">
                       <Button  
