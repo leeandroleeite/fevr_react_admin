@@ -1,11 +1,12 @@
 import React from 'react'
-import { AddPlayersForm } from './AddPlayersForm'
-import SortingTable from './SortingTable'
+import { AddPlayersForm } from '../components/AddPlayersForm'
+import SortingTable from '../components/SortingTable'
 
-export default function Dashboard() {
+
+export default function Dashboard(props: any) {
+
   return (
     <>
-    <div>Dashboard</div>
     <div style={{margin: '5%'}}>
         <AddPlayersForm />
         <br />

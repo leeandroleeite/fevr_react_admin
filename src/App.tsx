@@ -1,20 +1,38 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Dashboard from './components/Dashboard';
-import Home from './components/Home';
+import Dashboard from './pages/Dashboard';
+import Home from './pages/Home';
 
 
-function App() {
+export default function App() {
+
+  const [loggedInStatus, setloggedInStatus] = useState("NOT_LOGGED_IN");
+  
+  const handleLogin = () => {
+    setloggedInStatus('LOGGED_IN');
+  }
+  
   return (
-    <div className='app'>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/dashboard" element={<Dashboard />}/>
-        </Routes>
-      </BrowserRouter>
-    </div>
- );
+        <BrowserRouter>
+          <Switch>
+            <Route 
+            exact 
+            path="/" 
+            render = {props => (
+              <Home {...props} loggedInStatus={loggedInStatus} handleLogin={handleLogin} />
+            )}
+            />
+            <Route 
+            exact 
+            path="/dashboard/"
+            render = {props => (
+              <Dashboard {...props} loggedInStatus={loggedInStatus} />
+            )}
+            />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </BrowserRouter>
+  )
 }
-export default App;
+
