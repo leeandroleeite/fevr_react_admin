@@ -22,7 +22,7 @@ const initialValues = {
 
     useEffect(() => {
         fetchNotifications(props.id)
-    }, [5]);
+    }, [props.id]);
 
     const fetchNotifications = async (id: string | number) => {
         const response = await  fetch('/api/players/' + id + '/notifications');

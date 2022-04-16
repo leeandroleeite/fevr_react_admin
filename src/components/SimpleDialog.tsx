@@ -18,9 +18,6 @@ function SimpleDialog(props: SimpleDialogProps) {
     onClose(selectedValue);
   };
 
-  const handleListItemClick = (value: string) => {
-    onClose(value);
-  };
 
   return (
     <Dialog onClose={handleClose} open={open}>
@@ -36,9 +33,6 @@ export interface SimpleDialogProps {
 export default function OpenSimpleDialog(props: any) {
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
 
   const handleClose = (value: string) => {
     setOpen(false);
