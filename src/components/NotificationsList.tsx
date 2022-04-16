@@ -50,12 +50,14 @@ const initialValues = {
 
   return (
     <Box sx={{ marginLeft:'5%', maxWidth: '150%', bgcolor: 'whitesmoke' }}>
+              <p>Notifications:</p>
+
         <List dense={true}>
           {
                 notifications.map((notification, index) => {
                     return(
                         <ListItem key={index} disablePadding>
-                        <ListItemText primary="Notification:" />
+                        <ListItemText/>
                         <p>{notification['message']}</p>
                         <Button  
                         onClick={(id) => handleDeleteRecord(props.id, notification['id'])} 

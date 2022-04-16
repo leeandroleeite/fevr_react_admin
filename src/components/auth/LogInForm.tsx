@@ -16,7 +16,7 @@ export const LogInForm: React.FC<Props> = (props:any) => {
     }
     
     const  handleSubmitForm = (values: { email: string; password: string; errors: string; }) => {
-        axios.post("/api/sessions", values, {withCredentials: true})
+        axios.post("/api/admins", values, {withCredentials: true})
         .then( response => {
             if(response.data.status === 'created') {
                 props.handleSuccessfulAuth(response.data)
@@ -27,8 +27,6 @@ export const LogInForm: React.FC<Props> = (props:any) => {
     return (
       
         <>
-            <h1>LogIn</h1>
-
             <Formik initialValues={initialValues} onSubmit={values => {
                 handleSubmitForm(values);
         }}

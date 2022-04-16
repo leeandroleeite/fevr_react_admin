@@ -1,3 +1,4 @@
+import { margin } from '@mui/system';
 import React from 'react'
 import { LogInForm } from '../components/auth/LogInForm'
 
@@ -12,8 +13,18 @@ export default function Home(props: any) {
 
   return (
     <>
-    <h1>Status: {props.loggedInStatus}</h1>
-    <LogInForm handleSuccessfulAuth={handleSuccessfulAuth} />
+    <div style={{display: 'flex', alignContent: 'center', justifyContent: 'center', margin: '2%'}}>
+      <div >
+    <h1>LogIn</h1>
+    </div>
+
+    <div style={{display: 'flex', alignContent: 'center', justifyContent: 'center'}}>
+        <LogInForm handleSuccessfulAuth={handleSuccessfulAuth} />
+    </div>
+    </div>
+
+   
+    
     </>
   )
 }

@@ -18,7 +18,7 @@ export default function App() {
           <Switch>
             <Route 
             exact 
-            path="/" 
+            path="/home" 
             render = {props => (
               <Home {...props} loggedInStatus={loggedInStatus} handleLogin={handleLogin} />
             )}
@@ -30,7 +30,7 @@ export default function App() {
               <Dashboard {...props} loggedInStatus={loggedInStatus} />
             )}
             />
-            <Redirect from="*" to="/" />
+            <Redirect from="/" to="/home" />
           </Switch>
         </BrowserRouter>
   )
