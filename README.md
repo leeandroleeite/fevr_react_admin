@@ -23,7 +23,7 @@ Status: This page is currently under active development and might not be ready f
 
 ### Clone the repo
 ```
-git clone git@github.com:leeandroleeite/fevr_ruby_api.git
+git clone git@github.com:leeandroleeite/fevr_react_admin.git
 ```
 
 ### Install the required Dependencies
@@ -41,3 +41,7 @@ Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+
+API for testing:
+[https://github.com/leeandroleeite/fevr_ruby_api](https://github.com/leeandroleeite/fevr_ruby_api)
